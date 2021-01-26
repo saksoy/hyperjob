@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if is_staff %}
+    <form action="vacancy/new" method="post">{% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+{% else %}
+    <form action="resume/new" method="post">{% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+{% endif %}
+</body>
+</html>
